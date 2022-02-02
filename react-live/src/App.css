@@ -1,0 +1,79 @@
+.BodyDaOBere{
+    width:100%;
+    height: calc(100vh - 3.5rem);
+    background-color: aqua;
+    display:grid;
+    grid-template-columns: 4fr 3fr;
+}
+.DetailsDaOBere{
+    background-color: #383330;
+    padding:30px;
+}
+.DetailsDaOBereInner{
+   background-image: url('../public/imgs/retro_beer_sign.jpg');
+    background-size:cover;
+    background-position: center;
+    width:100%;
+    height:100%;
+    border-radius:0.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.DaObere{
+    background-color: #383330;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 50px;
+}
+
+.DaObereInner{
+    background-color: #f09a47;
+    width:100%;
+    height:100%;
+    border-radius:1em;
+    padding:15px;
+}
+
+.quantitySelector{
+    display:flex;
+    flex-direction: row;
+    gap:5px;
+    align-items:center;
+    justify-content: center;
+    background-color:#fdf2f6;
+    padding:15px 5px;
+    border-radius:0.25em;
+
+}
+
+.imagineBereMica{
+    background-image: url('../public/imgs/beer.png');
+    background-size:cover;
+    background-position: center;
+    width:2em;
+    height:2em;
+}
+
+.xMarkBeer{
+    color:#393433;
+    vertical-align: center;
+    line-height: 2em;
+    font-weight: bold;
+}
+
+.QuantityPresets{
+    width:25px;
+    height:25px;
+    border-radius:100%;
+    font-weight: bold;
+    background-color:#ed7ea6;
+    text-align:center;
+    color:white;
+    /* line-height: 2em; */
+    
+}
+
+.TitleDaOBereCard{
+    color: #ffffdf;
+    text-align: center;
+}

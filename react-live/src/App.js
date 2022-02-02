@@ -2,7 +2,7 @@ import './App.css';
 import Home from './Home';
 import Daobere from './Daobere';
 import Leaderboard from './Leaderboard';
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Navbar from './Navbar';
 function App() {
   return (
