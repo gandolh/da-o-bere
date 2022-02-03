@@ -1,79 +1,69 @@
-.BodyDaOBere{
+.BodyHome{
+    background-color: #fafbfd;
+    min-height: calc(100vh - 3.5rem);
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+.BannerHome{
     width:100%;
-    height: calc(100vh - 3.5rem);
-    background-color: aqua;
     display:grid;
     grid-template-columns: 4fr 3fr;
+    margin-top:20px;
 }
-.DetailsDaOBere{
-    background-color: #383330;
-    padding:30px;
+.BannerInfo{
+    padding:20px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 }
-.DetailsDaOBereInner{
-   background-image: url('../public/imgs/retro_beer_sign.jpg');
-    background-size:cover;
-    background-position: center;
+
+.BannerInfo > h1{
+    font-weight: 600;
+    color: #28292d
+}
+.BannerInfo > p {
+    color:#696e81
+}
+.BannerInfo button,.BannerInfo button:hover {
+    background-color:#fe813f;
+    color:#fff2d7;
+}
+.HomeActionButton{
+    display:flex;
+    justify-content: center;
+    align-items:flex-start;
+    flex-direction: column;
+}
+
+.BannerBigImage{
+    display:flex;
     width:100%;
     height:100%;
-    border-radius:0.5em;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.DaObere{
-    background-color: #383330;
-    display:flex;
     justify-content: center;
     align-items: center;
-    padding: 100px 50px;
-}
-
-.DaObereInner{
-    background-color: #ed7ea6;
-    width:100%;
-    height:100%;
-    border-radius:1em;
-    padding:15px;
-}
-
-.quantitySelector{
-    display:flex;
-    flex-direction: row;
-    gap:5px;
-    align-items:center;
-    justify-content: center;
-    background-color:#fdf2f6;
-    padding:15px 5px;
-    border-radius:0.25em;
+    padding:20px;
 
 }
-
-.imagineBereMica{
-    background-image: url('../public/imgs/beer.png');
+.BigImageHome{
+    background-image:url('../public/imgs/beer.png');
     background-size:cover;
     background-position: center;
-    width:2em;
-    height:2em;
+    width:250px;
+    height:250px;
+    border-radius:0.5em;
 }
 
-.xMarkBeer{
-    color:#393433;
-    vertical-align: center;
-    line-height: 2em;
-    font-weight: bold;
+.keyPointsBody{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
-
-.QuantityPresets{
-    width:25px;
-    height:25px;
-    border-radius:100%;
-    font-weight: bold;
-    background-color:#ed7ea6;
-    text-align:center;
-    color:white;
-    /* line-height: 2em; */
-    
-}
-
-.TitleDaOBereCard{
-    color: #fdf2f6;
+.keyPointEntry{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }

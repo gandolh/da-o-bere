@@ -1,0 +1,146 @@
+.BodyDaOBere{
+    width:100%;
+    height: calc(100vh - 3.5rem);
+    background-color: aqua;
+    display:grid;
+    grid-template-columns: 4fr 3fr;
+}
+.DetailsDaOBere{
+    background-color: #383330;
+    padding:30px;
+}
+.DetailsDaOBereInner{
+   background-image: url('../public/imgs/retro_beer_sign.jpg');
+    background-size:cover;
+    background-position: center;
+    width:100%;
+    height:100%;
+    border-radius:0.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.DaObere{
+    background-color: #383330;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.DaObereInner{
+    background-color: #ed7ea6;
+    width: min(35vw,70vh);
+    height: min(35vw,70vh);
+    border-radius:1em;
+    padding:15px;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    justify-content: center;
+    align-items: center;
+}
+.DaObereInner > h1{
+    margin-bottom: 0;
+    text-align: left;
+}
+.quantitySelector{
+    display:flex;
+    width:100%;
+    flex-direction: row;
+    gap:5px;
+    align-items:center;
+    justify-content: center;
+    background-color:#fdf2f6;
+    padding:15px 5px;
+    border-radius:0.25em;
+
+}
+
+.imagineBereMica{
+    background-image: url('../public/imgs/beer.png');
+    background-size:cover;
+    background-position: center;
+    width:2em;
+    height:2em;
+}
+
+.xMarkBeer{
+    color:#393433;
+    vertical-align: center;
+    line-height: 2em;
+    font-weight: bold;
+}
+
+.QuantityPresets{
+    width:25px;
+    height:25px;
+    border-radius:100%;
+    font-weight: bold;
+    border:1px solid #ed7ea6;
+    color: #ed7ea6;
+    background-color:#ffffff;
+    text-align:center;
+    /* line-height: 2em; */
+    
+}
+.QuantityPresets.active{
+    color:white;
+    background-color:#ed7ea6;
+}
+
+
+.BeerMesageContainer{
+    background-color:#f3f3f4;
+    resize:none;
+    border: 0;
+    margin:0;
+}
+.BeerMesageContainer:focus{
+    background-color:#f3f3f4;
+    border: 0;
+    margin:0;
+    box-shadow: none;
+}
+.BtnDaOBere{
+    border-radius:360px;
+    width:90%;
+    height:50px;
+    border:0;
+    background-color: #fdf2f6 !important;
+    color: #de0050;
+    font-weight: 600;
+}
+
+.BtnDaOBere:hover{
+    background-color: #fdf2f6;
+}
+.TitleDaOBere{
+    /* gap:10px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fdf2f6;
+    font-size:14pt;
+    font-weight:600;
+}
+
+
+.GivenBeerName, .GivenBeerName:focus{
+ margin-left:10px;
+ border:0;
+ border-bottom: 1px solid #f3f3f4;
+ background-color:#ed7ea6;
+ color:#f3f3f4;
+ box-shadow:none;
+ font-weight:600;
+}
+.GivenBeerName::placeholder {
+    color:#ffc5c5;
+    opacity: 1; /* Firefox */
+  }
+  
+  .GivenBeerName:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:#ffc5c5;
+  }
+  
+  .GivenBeerName::-ms-input-placeholder { /* Microsoft Edge */
+    color:#ffc5c5;
+  }

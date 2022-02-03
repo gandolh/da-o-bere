@@ -1,4 +1,5 @@
 import './App.css';
+import './Media.css';
 import Home from './Home';
 import Daobere from './Daobere';
 import Leaderboard from './Leaderboard';
