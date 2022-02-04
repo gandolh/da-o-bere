@@ -3,24 +3,24 @@ import React from 'react';
 const KeyPoint = ({Image, Title, Description}) => {
     const keyPoints=[
         {
-            "Image":"sd", //path
+            "Image":"fas fa-3x fa-users", //path
             "Title":"Sustineti prietenul drag ",
             "Description":
             "Poti sa ii dai fratelui sau surorii tale o bere."+
-            " Merita dupa ce te-a ajutat" + 
+            " Merita dupa ce te-a ajutat " + 
             "sa iei examenul la logica,mate sau orice alta materie" 
         },
         {
-            "Image":"sd", //path
-            "Title":"Gratis si deschis pentru toata lumea",
+            "Image":"fas fa-3x fa-door-open", //path
+            "Title":"Deschis pentru toata lumea",
             "Description":"Mereu cand simti nevoia sau iti amintesti "+
             "de un gest frumos pe care l-a facut un coleg de-al tau " +
             "poti sa intri, "+
             "sa ii dai o bere si sa il lasi un mesaj frumos"
         },
         {
-            "Image":"", //path
-            "Title":"Clasamentul reflecta aprecierea colectiva",
+            "Image":"fas fa-3x fa-trophy", //path
+            "Title":"Clasamentul reflecta aprecierea",
             "Description":
             "Desi datul berii este anonim, primitul nu este. Cei mai buni colegi vor "+
             "avea cele mai multe beri in leaderboard si vor avea aprecierea eterna "+
@@ -29,11 +29,11 @@ const KeyPoint = ({Image, Title, Description}) => {
     ]
 
     return ( 
-        <div className='keyPointsBody'>
+        <div className=' keyPointsBody'>
         {keyPoints.map((kp, i) => (
         <div key={'keyPoint'+i} className='keyPointEntry'>
-            <img src="http://localhost:3000/static/media/beer.6b6f4b3813b7106c201a.png" height="50"/>
-            <h5>{kp.Title}</h5>
+            <i className={kp.Image} style={{color:'#ffdd00',textShadow:"2px 2px 0 #000 "}}></i>
+            <h5 style={{fontWeight:600,marginTop:'10px'}}>{kp.Title}</h5>
             <small>{kp.Description}</small>
         </div>
         )
