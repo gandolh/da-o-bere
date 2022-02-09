@@ -4,7 +4,7 @@ const Daobere = () => {
     const [beerCount, setBeerCount] = useState(1);
     
     useEffect(() => {
-        console.log(beerCount)
+        // console.log(beerCount)
     });
 
     const HandleChangeBeerCount = (value)=>{
@@ -27,7 +27,7 @@ const Daobere = () => {
                 <div className="quantitySelector">
                     <div className="imagineBereMica"/>
                     <div className='xMarkBeer'> x </div>
-                    <input style={{boxShadow:'none'}}
+                    <input value={beerCount} style={{boxShadow:'none'}}
                     type="text" placeholder='0' size="2" maxLength={3} onChange={(e)=>{HandleChangeBeerCount(e.target.value)}}></input>
                     <div className={getQuantityPresetsClassName(1)} onClick={()=>{HandleChangeBeerCount(1)}}>1</div>
                     <div className={getQuantityPresetsClassName(3)} onClick={()=>{HandleChangeBeerCount(3)}}>3</div>

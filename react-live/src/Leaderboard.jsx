@@ -1,7 +1,7 @@
 import React from 'react';
 const Leaderboard = () => {
-    return ( <div>
-       leaderboard
+    return ( <div className='bodyLeaderboard'>
+       
 
 
     </div> );

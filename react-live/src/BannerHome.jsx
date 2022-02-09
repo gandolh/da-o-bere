@@ -6,8 +6,8 @@ const BannerHome = () => {
         <h1>Aratati aprecierea colegului ce te-a ajutat recent</h1>
         <p> Sau doar simti ca merita o bere cu adevarat!</p>
         <div className="HomeActionButton">
-          <button className="btn">Da o bere</button>
-          <small className="text-muted">
+          {/* <button className="btn DaOBere">Da o bere</button> */}
+          <small>
             Va rugam da-ti berea cu responsabilitate.
           </small>
         </div>

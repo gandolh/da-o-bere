@@ -32,7 +32,7 @@ const KeyPoint = ({Image, Title, Description}) => {
         <div className=' keyPointsBody'>
         {keyPoints.map((kp, i) => (
         <div key={'keyPoint'+i} className='keyPointEntry'>
-            <i className={kp.Image} style={{color:'#ffdd00',textShadow:"2px 2px 0 #000 "}}></i>
+            <i className={kp.Image} style={{color:'#fec652',textShadow:"1px 1px 0 #000 "}}></i>
             <h5 style={{fontWeight:600,marginTop:'10px'}}>{kp.Title}</h5>
             <small>{kp.Description}</small>
         </div>
