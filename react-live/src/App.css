@@ -1,7 +1,45 @@
-.bodyLeaderboard{
-    background-color: #434343;
-    min-height: calc(100vh - 3.5rem);
-    display:flex;
-    flex-direction: column;
-    gap:20px;
-}
+    .pageBodyLeaderboard{
+        background-color: #333646;
+        height: calc(100vh - 3.5rem);
+        max-height: calc(100vh - 3.5rem);
+        width:100vw;
+        max-width: 100vw;
+        display:flex;
+        flex-direction: column;
+        gap:20px;
+        overflow:hidden;
+        color:white;
+    }
+    .leaderBoardWave{
+        position: absolute;
+        bottom: 0;
+    }
+
+    .mainBodyLeaderBoard{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        height:300px;
+        width:300px;
+    }
+
+    .backDroppedBody{
+        position:absolute;
+        width:50%;
+        height:300px;
+        background-color:green;
+        top:50%;
+        left:50%;
+        transform: translate(-75%,-75%);
+    }
+
+    .frontDroppedBody{
+        position:absolute;
+        width:50%;
+        height:300px;
+        background-color:yellow;
+        top:50%;
+        left:50%;
+        transform: translate(-25%,-25%);
+    }
