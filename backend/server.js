@@ -96,7 +96,7 @@ const adminJsOptions = new AdminJS({
     }
 });
 
-const defaultRouter = AdminJSExpress.buildRouter(adminJsOptions);
+// const defaultRouter = AdminJSExpress.buildRouter(adminJsOptions);
 
 // Build and use a router which will handle all AdminJS routes
 const authRouter = AdminJSExpress.buildAuthenticatedRouter(adminJsOptions, {
@@ -118,7 +118,8 @@ app.get("/", (req, res) => {
 	res.send("E viu!");
 });
 
-app.use(adminJsOptions.options.rootPath, defaultRouter);
+// app.use(adminJsOptions.options.rootPath, defaultRouter);
+app.use(adminJsOptions.options.rootPath, authRouter);
 app.listen(port, () => {
 	console.log(`Example app listening on port ${port}`);
 });
