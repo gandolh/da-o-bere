@@ -14,9 +14,12 @@
     "@adminjs/express": "^4.0.2",
     "@adminjs/mongoose": "^2.0.0",
     "adminjs": "^5.6.1",
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.6",
     "dotenv": "^16.0.0",
     "express": "^4.17.2",
     "express-formidable": "^1.2.0",
+    "express-session": "^1.17.2",
     "mongoose": "^6.2.1",
     "nodemon": "^2.0.15"
   }
