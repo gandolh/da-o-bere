@@ -76,24 +76,7 @@ const adminJsOptions = new AdminJS({
 				parent: UserControl,
 			},
 		},
-	],
-    actions: {
-        new: {
-            before: async (request) => {
-              if(request.payload.password) {
-                request.payload = {
-                  ...request.payload,
-                  encryptedPassword: await bcrypt.hash(request.payload.password, 10),
-                  password: undefined,
-                }
-              }
-              return request
-            },
-          },
-        edit: { isAccessible: false },
-        delete: { isAccessible: false },
-        new: { isAccessible: false },
-    }
+	]
 });
 
 // const defaultRouter = AdminJSExpress.buildRouter(adminJsOptions);
