@@ -4,6 +4,8 @@ import Home from './Home';
 import Daobere from './Daobere';
 import Leaderboard from './Leaderboard';
 import { Routes, Route } from "react-router-dom";
+import { Admin } from 'react-admin';
+import jsonServerProvider from 'ra-data-json-server';
 import Navbar from './Navbar';
 function App() {
   return (
