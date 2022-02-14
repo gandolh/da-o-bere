@@ -3,11 +3,10 @@ const AdminJSExpress = require("@adminjs/express");
 const AdminJSMongoose = require("@adminjs/mongoose");
 const mongoose = require("mongoose");
 const express = require("express");
-const bcrypt = require('bcrypt')
+const bcrypt = require("bcrypt");
 require("dotenv").config();
 // We have to tell AdminJS that we will manage mongoose resources with it
 AdminJS.registerAdapter(AdminJSMongoose);
-
 
 // express server definition
 const app = express();
@@ -28,6 +27,10 @@ const UserControl = {
 	name: "User Control",
 	icon: "User",
 };
+const canEdit = ({ currentAdmin, record }) => {
+	return currentAdmin && currentAdmin.role === "admin";
+};
+
 const adminJsOptions = new AdminJS({
 	databases: [],
 	rootPath: "/admin",
@@ -41,10 +44,25 @@ const adminJsOptions = new AdminJS({
 		component: AdminJS.bundle("./my-dashboard-component"),
 	},
 	resources: [
-		{ resource: User, options: { parent: UserControl } },
+		{
+			resource: User,
+			options: {
+				actions: {
+					edit: { isAccessible: canEdit },
+					delete: { isAccessible: canEdit },
+					new: { isAccessible: canEdit },
+				},
+				parent: UserControl,
+			},
+		},
 		{
 			resource: AdminUser,
 			options: {
+				actions: {
+					edit: { isAccessible: canEdit },
+					delete: { isAccessible: canEdit },
+					new: { isAccessible: canEdit },
+				},
 				properties: {
 					encryptedPassword: {
 						isVisible: false,
@@ -76,26 +94,39 @@ const adminJsOptions = new AdminJS({
 				parent: UserControl,
 			},
 		},
-	]
+	],
+	preventAssignment: true,
 });
 
 // const defaultRouter = AdminJSExpress.buildRouter(adminJsOptions);
 
 // Build and use a router which will handle all AdminJS routes
-const authRouter = AdminJSExpress.buildAuthenticatedRouter(adminJsOptions, {
-    authenticate: async (userName, password) => {
-      const user = await User.findOne({ userName })
-      if (user) {
-        const matched = await bcrypt.compare(password, user.encryptedPassword)
-        if (matched) {
-          return user
-        }
-      }
-      return false
-    },
-    cookiePassword: process.env.cookiePassword,
-  })
 
+const authRouter = AdminJSExpress.buildAuthenticatedRouter(
+	adminJsOptions,
+	{
+		authenticate: async (userName, password) => {
+			console.log(userName);
+			const user = await AdminUser.findOne({ userName });
+
+			if (user) {
+				const matched = await bcrypt.compare(password, user.encryptedPassword);
+				console.log(password, user.encryptedPassword);
+				if (matched) {
+					return user;
+				}
+			}
+			return false;
+		},
+		cookiePassword: process.env.cookiePassword,
+	},
+	
+    null,
+	{
+		resave: true,
+		saveUninitialized: false,
+	}
+);
 
 app.get("/", (req, res) => {
 	res.send("E viu!");
