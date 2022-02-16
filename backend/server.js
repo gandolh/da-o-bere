@@ -41,7 +41,7 @@ const adminJsOptions = new AdminJS({
 		handler: async () => {
 			console.log("1");
 		},
-		component: AdminJS.bundle("./my-dashboard-component"),
+		component: AdminJS.bundle("./adminDasboard"),
 	},
 	resources: [
 		{
@@ -106,12 +106,10 @@ const authRouter = AdminJSExpress.buildAuthenticatedRouter(
 	adminJsOptions,
 	{
 		authenticate: async (userName, password) => {
-			console.log(userName);
 			const user = await AdminUser.findOne({ userName });
 
 			if (user) {
 				const matched = await bcrypt.compare(password, user.encryptedPassword);
-				console.log(password, user.encryptedPassword);
 				if (matched) {
 					return user;
 				}
@@ -128,11 +126,19 @@ const authRouter = AdminJSExpress.buildAuthenticatedRouter(
 	}
 );
 
+
+
 app.get("/", (req, res) => {
 	res.send("E viu!");
 });
-
-// app.use(adminJsOptions.options.rootPath, defaultRouter);
+app.get(adminJsOptions.options.rootPath+'/resources/*',(req, res, next) => {
+    if (req.session && req.session.admin) {
+      req.session.adminUser = req.session.admin
+      next()
+    } else {
+      res.redirect(adminJsOptions.options.loginPath)
+    }
+  })
 app.use(adminJsOptions.options.rootPath, authRouter);
 app.listen(port, () => {
 	console.log(`Example app listening on port ${port}`);
